@@ -1,0 +1,294 @@
+@import url("https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+
+:root {
+  --ff-main: "Karla", sans-serif;
+  /* PRIMARY */
+  --Cyan: hsl(179, 62%, 43%);
+  --Bright-Yellow: hsl(71, 73%, 54%);
+  /* NEUTRAL */
+  --Light-Gray: hsl(204, 43%, 93%);
+  --Grayish-Blue: hsl(218, 22%, 67%);
+}
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* GLOBAL */
+
+html {
+  font-family: var(--ff-main);
+  font-size: 1rem;
+}
+
+body {
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+/* MAIN CONTENT */
+main {
+  min-height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+
+  background-color: var(--Light-Gray);
+
+  padding: 4.5rem 2rem;
+}
+
+.container {
+  display: grid;
+  max-width: 600px;
+  grid-template-columns: 1fr;
+  border-radius: 0.5rem;
+
+  overflow: hidden;
+}
+
+/* HEADER */
+.container__header {
+  background-color: white;
+
+  padding: 1.5rem 1.5rem 2rem;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 1.3rem;
+}
+
+.container__header h1 {
+  font-size: 1.2rem;
+  color: var(--Cyan);
+
+  /* margin-bottom: 1.3rem; */
+}
+
+.container__header h2 {
+  font-size: 0.9rem;
+  color: var(--Bright-Yellow);
+
+  /* margin-bottom: 1rem; */
+}
+
+.container__header p {
+  font-size: 0.85rem;
+  line-height: 1.9;
+  color: var(--Grayish-Blue);
+}
+
+/* CTA */
+
+.container__cta {
+  background-color: var(--Cyan);
+
+  padding: 1.5rem;
+}
+
+.container__cta h2 {
+  font-size: 1.1rem;
+  color: white;
+
+  margin-bottom: 0.7rem;
+}
+
+/* $29 BOLD */
+.container__cta-p--light #price {
+  font-size: 2rem;
+  color: white;
+  font-weight: 700;
+}
+
+/* per month (light) */
+.container__cta-p--light {
+  color: var(--Light-Gray);
+  font-weight: 400;
+}
+
+.container__cta-p {
+  color: white;
+
+  margin-bottom: 1.2rem;
+}
+
+.container__cta-btn {
+  border: none;
+  background-color: var(--Bright-Yellow);
+  color: white;
+
+  border-radius: 0.3rem;
+
+  padding: 0.8rem;
+
+  max-width: 300px;
+  width: 100%;
+
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+
+.container__cta-btn:hover {
+  opacity: 80%;
+  cursor: pointer;
+}
+
+.container__desc {
+  background-color: hsl(179, 62%, 60%);
+
+  padding: 1.5rem;
+}
+
+.container__desc h2 {
+  font-size: 1.1rem;
+  color: white;
+
+  margin-bottom: 0.9rem;
+}
+
+.container__desc ul {
+  color: var(--Light-Gray);
+  font-size: 0.9rem;
+  font-weight: 400;
+
+  line-height: 1.4;
+}
+
+/* FOOTER */
+/* .attribution {
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+} */
+
+/* 600px */
+@media screen and (min-width: 600px) {
+  .container {
+    text-align: center;
+  }
+}
+
+/* 1000px */
+@media screen and (min-width: 1000px) {
+  main {
+    align-items: center;
+  }
+
+  .grid-col-span-2 {
+    grid-column: span 2;
+  }
+
+  .container {
+    text-align: initial;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    max-width: 635px;
+  }
+
+  .container__header {
+    padding: 2.2rem 2.5rem;
+    /* padding-top: 2.6rem;
+    padding-left: 2.3rem;
+    padding-right: 2.3rem;
+    padding-bottom: 1rem; */
+
+    gap: 0rem;
+  }
+
+  .container__header h1 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .container__header h2 {
+    font-size: 1.1rem;
+
+    margin-bottom: 0.5rem;
+  }
+
+  .container__header p {
+    font-size: 0.95rem;
+    padding-right: 0.5rem;
+  }
+
+  .container__cta {
+    padding: 2.3rem;
+  }
+
+  .container__desc {
+    padding: 2.3rem;
+  }
+}
